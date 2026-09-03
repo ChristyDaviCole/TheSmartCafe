@@ -1,0 +1,2 @@
+Journal Prompt 1: Explain the syntax difference between the function declaration (calculatePrice) and the function expression (getTax).
+calculatePrice simply declares a function and getTax is a function expression because it creates a function and assigns it to a variable.
