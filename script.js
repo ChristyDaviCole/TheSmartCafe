@@ -24,4 +24,33 @@ console.log(subtotal);
 const tax = getTax(subtotal, 0.07);
 console.log(tax);
 
-//Journal Prompt: Explain the syntax difference between the function declaration (calculatePrice) and the function expression (getTax).
+//Journal Prompt: Explain the syntax difference between the function declaration (calculatePrice)
+// and the function expression (getTax).
+
+/*Phase 2: Function Scope & Variable Accessibility
+Now, explore local scope boundaries using internal variables.*/
+
+//Create a function named calculateStoreTax that takes an amount parameter.
+//Inside the function, define a local variable const defaultTaxRate = 0.07.
+
+function calculateStoreTax(amount) {
+    const defaultTaxRate = 0.07;
+
+    return getTax(amount, defaultTaxRate);
+}
+
+calculateStoreTax(100);
+
+console.log(calculateStoreTax(100));
+
+console.log(defaultTaxRate);
+
+//Return the tax for an amount given that default value
+//Hint: you can call functions in other functions
+
+//Console Test:
+//Call calculateStoreTax(100) and console.log() the output.
+//Directly below that call, attempt to console.log(defaultTaxRate) outside the function.
+//Check your browser console to observe the error. Once confirmed, comment out the line that caused the error.
+
+//Journal Prompt: What happened when you tried to log defaultTaxRate outside the function? Why did that occur?
