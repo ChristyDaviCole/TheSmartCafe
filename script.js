@@ -43,7 +43,7 @@ calculateStoreTax(100);
 
 console.log(calculateStoreTax(100));
 
-console.log(defaultTaxRate);
+//console.log(defaultTaxRate);
 
 //Return the tax for an amount given that default value
 //Hint: you can call functions in other functions
