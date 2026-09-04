@@ -4,16 +4,20 @@
 /*Create a function declaration named calculatePrice that takes price and quantity
 as parameters and returns price * quantity.*/
 
-function calculatePrice(price, quantity) {
-    return price * quantity;
-}
+//function calculatePrice(price, quantity) {
+//    return price * quantity;
+//}
+
+const calculatePrice = (price, quantity) => price * quantity;
 
 /*Create a function expression assigned to a variable named getTax that takes amount and taxRate as parameters.
 It should return only the tax value (amount * taxRate).*/
 
-const getTax = function (amount, taxRate) {
-    return amount * taxRate;
-}
+//const getTax = function (amount, taxRate) {
+//    return amount * taxRate;
+//}
+
+const getTax = (amount, taxRate) => amount * taxRate;
 
 //Console Test: Call both functions with test numbers (e.g., item price $15, quantity 4, tax rate 0.07).
 //Use console.log() to output the subtotal and calculated tax to the browser console.
@@ -54,3 +58,19 @@ console.log(calculateStoreTax(100));
 //Check your browser console to observe the error. Once confirmed, comment out the line that caused the error.
 
 //Journal Prompt: What happened when you tried to log defaultTaxRate outside the function? Why did that occur?
+
+//Phase 3: Refactoring to Arrow Functions
+//To modernize the codebase, shorten your basic helper functions using concise arrow syntax.
+
+//Refactor both calculatePrice and getTax into Arrow Functions.
+
+//See line 11
+
+//Use concise syntax (implicit return without {} or the return keyword).
+
+//See line 20
+
+//Console Test: Re-run your console.log() tests from Phase 1. Verify in the console that the outputs match your Phase 1 results exactly.
+
+//Journal Prompt: Describe how arrow function syntax differs from standard function expressions. Did concise implicit returns make your cod1e easier or harder to read?
+
