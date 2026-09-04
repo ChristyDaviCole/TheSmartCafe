@@ -43,7 +43,7 @@ function calculateStoreTax(amount) {
     return getTax(amount, defaultTaxRate);
 }
 
-calculateStoreTax(100);
+//calculateStoreTax(100);
 
 console.log(calculateStoreTax(100));
 
@@ -108,3 +108,38 @@ console.log(applyDiscount(100, seniorDiscount));
 //Journal Prompt: Why is applyDiscount considered a “Higher-Order Function”?
 //What role did studentDiscount and seniorDiscount play?
 //What function would you have to write if you wanted to apply no discount?
+
+/*Phase 5: Composing the Master Order Function
+Combine all individual helper functions into a single transaction process.*/
+
+//Create a main function named calculateFinalBill that accepts three parameters: price, quantity, and discountCallback.
+//Inside calculateFinalBill, compose your existing functions step-by-step:
+
+//const calculateFinalBill = (price, quantity, discountCallback) => calculatePrice(price, quantity);
+////Use calculatePrice to get the subtotal.
+
+const calculateFinalBill = (price, quantity, discountCallback) => {
+ 
+    const subtotal = calculatePrice(price, quantity);
+
+    //Use applyDiscount with the provided discountCallback to get the discounted price.
+
+    const discountedSubtotal = applyDiscount(subtotal, discountCallback);
+
+    //Use getTax (with a rate of 0.07) on the discounted price to get the tax amount.
+    
+    const storeTax = getTax(discountedSubtotal, 0.07);
+
+    //Return the grand total (discounted price + tax amount).
+
+    const grandTotal = discountedSubtotal + storeTax;
+    
+    return grandTotal;
+
+}
+
+//Console Test: Call calculateFinalBill(20, 3, studentDiscount) and console.log() the returned grand total.
+
+console.log(calculateFinalBill(20, 3, studentDiscount));
+
+//Journal Prompt: How did breaking the order process into small, single-purpose functions make writing calculateFinalBill easier than putting all the math into one long block of code?

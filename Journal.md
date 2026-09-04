@@ -9,3 +9,5 @@ The fat arrow syntax lets you omit the curly braces, the word function, and the 
 
 Journal Prompt 4: Why is applyDiscount considered a “Higher-Order Function”? What role did studentDiscount and seniorDiscount play? What function would you have to write if you wanted to apply no discount?
 applyDiscount is a higher order function because it takes another function as an argument. studentDiscount and seniorDiscount were the callback functions. applyDiscount would receive these callback functions and then execute. const noDiscount = total => total;
+
+Journal Prompt 5: How did breaking the order process into small, single-purpose functions make writing calculateFinalBill easier than putting all the math into one long block of code? A function declaration creates a function directly, while a function expression assigns a function to a variable.
