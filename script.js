@@ -70,7 +70,41 @@ console.log(calculateStoreTax(100));
 
 //See line 20
 
-//Console Test: Re-run your console.log() tests from Phase 1. Verify in the console that the outputs match your Phase 1 results exactly.
+//Console Test: Re-run your console.log() tests from Phase 1.
+//Verify in the console that the outputs match your Phase 1 results exactly.
 
-//Journal Prompt: Describe how arrow function syntax differs from standard function expressions. Did concise implicit returns make your cod1e easier or harder to read?
+//Journal Prompt: Describe how arrow function syntax differs from standard function expressions.
+//Did concise implicit returns make your cod1e easier or harder to read?
 
+/*Phase 4: Callbacks & Higher-Order Functions
+The Café offers various promotions. 
+Create a higher-order function that delegates discount calculations to callback functions.*/
+
+//Create a function named applyDiscount that takes two parameters: total and discountCallback. 
+//It should call discountCallback(total) and return the result.
+
+const applyDiscount = (total, discountCallback) => discountCallback(total);
+
+//Create two separate discount functions:
+
+//studentDiscount(total): returns the new price after applying a 10% discount (total * 0.90).
+
+const studentDiscount = total => total * 0.90;
+
+//seniorDiscount(total): returns the new price after applying a 20% discount (total * 0.80).
+
+const seniorDiscount = total => total * 0.80;
+
+//Console Test: Run applyDiscount(100, studentDiscount) and applyDiscount(100, seniorDiscount).
+
+applyDiscount(100, studentDiscount);
+applyDiscount(100, seniorDiscount);
+
+//console.log() both results to confirm the callbacks produce different outputs.
+
+console.log(applyDiscount(100, studentDiscount));
+console.log(applyDiscount(100, seniorDiscount));
+
+//Journal Prompt: Why is applyDiscount considered a “Higher-Order Function”?
+//What role did studentDiscount and seniorDiscount play?
+//What function would you have to write if you wanted to apply no discount?

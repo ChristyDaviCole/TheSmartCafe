@@ -3,3 +3,9 @@ calculatePrice simply declares a function and getTax is a function expression be
 
 Journal Prompt 2: What happened when you tried to log defaultTaxRate outside the function? Why did that occur?
 I got an uncaught reference error becuase the defaultTaxRate variable was inside of the local scope of its declaration and it can't be seen globally. 
+
+Journal Prompt 3: Describe how arrow function syntax differs from standard function expressions. Did concise implicit returns make your code easier or harder to read?
+The fat arrow syntax lets you omit the curly braces, the word function, and the word return. I like this style better becuase it is more concise and easy to understand.
+
+Journal Prompt 4: Why is applyDiscount considered a “Higher-Order Function”? What role did studentDiscount and seniorDiscount play? What function would you have to write if you wanted to apply no discount?
+applyDiscount is a higher order function because it takes another function as an argument. studentDiscount and seniorDiscount were the callback functions. applyDiscount would receive these callback functions and then execute. const noDiscount = total => total;
